@@ -1,0 +1,129 @@
+BODY { 
+    font-family: "Trebuchet MS", Tahoma, Verdana, Arial, sans-serif;
+    margin: 0;    
+    padding: 0;	 
+    /* text-align: center; */
+    min-width: 1400px;
+    background-color: #DDD2BD;
+    background-image: url(../img/parchment.jpg);
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse:collapse;
+}
+table.noBorder{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse:collapse;
+}
+TD.tableLabelText{
+    font-size: small;
+    text-align: left;
+}
+TD.tableEntryText{
+    font-size: small;                         			    
+    text-align: left;
+}
+TD.tableReadOnlyText{
+    font-size: small;                         			    
+    text-align: center;
+}
+table#FeeTable {
+    width: 810px;
+}
+table#magicItemTable {
+    width: 650px;
+}
+th.subtle{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+    border-bottom: 1px solid black;
+}
+div.balance{  
+    font-weight: bold;
+    font-size: medium;
+}
+div#accordion{
+    margin: auto;
+}
+label.expType {
+    font-size: x-small;
+}
+/* Header styles */
+#header {
+	clear:both;
+	float:left;
+	width:100%;
+        border-bottom:1px solid #000;
+        text-align: center;
+}
+/* column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;			/* width of page */
+	position:relative;
+}
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+					only padding top and bottom is included here, make it whatever value you need */
+	overflow:hidden;
+}
+/* 3 Column settings */
+.threecol {
+	background:#f4f4f4;		/* right column background colour */
+        /* background-image: url(../img/main-right.png); */
+        background-position: top;
+}
+.threecol .colmid {
+	right:15%;			/* width of the right column */
+	background:#DDD2BD;		/* center column background colour */
+        background-image: url(../img/center-texture.jpg);
+}
+.threecol .colleft {
+	right:70%;			/* width of the middle column */
+	background:#f4f4f4;             /* left column background colour */
+        /* background-image: url(../img/main-left.png); */
+        background-position: right top;
+}
+.threecol .col1 {
+	width:66%;			/* width of center column content (column width minus padding on either side) */
+	left:102%;			/* 100% plus left padding of center column */
+        text-align: center;
+}
+.threecol .col2 {
+	width:11%;			/* Width of left column content (column width minus padding on either side) */
+	left:21%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col3 {
+	width:11%;			/* Width of right column content (column width minus padding on either side) */
+	left:95%;			/* Please make note of the brackets here:
+					(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+/* Footer styles */
+#footer {
+	clear:both;
+	float:left;
+	width:100%;
+        height: auto;
+	border-top:1px solid #000;
+}
+.helpText {
+    font-size: small;
+    text-align: left;
+}

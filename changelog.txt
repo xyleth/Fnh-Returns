@@ -1,0 +1,97 @@
+TO - DO   
+    * Fix clear cookies button as does not seem to be working
+
+Changes in v2.1.2 - 02/04/2012
+	* Rehosted on the offical FnH website
+	* Updated to latest version of jQuery
+
+Changes in v2.1.1 - 16/07/2011
+    * Finally fixed tab order, but accordion elements do not open on a key press
+    *    when selected via tab.  Selection via up / down arrow keys works with
+    *    key press however.  Not sure if this is a bug in jQuery UI or my markup
+
+Changes in v2.1.0 - 03/07/2011
+    * Lots of Cosmetic tweaks
+    * Added delete button to FeeTable, Adventure table and Item Table
+    * Added over-ride check box to feeTable rows to exclude from checkFees
+    *   over-ride auto ticks if fees are manually changed
+    *   over-ride auto clears if the rank or org is changed
+    * Added special dispensation Physcian fees for Vleyborians
+    * Changed Narrative and CSV to direct file downloads rather than HTML output
+    *   This means you can export Narrative and CSV from the same form by
+    *   changing your selection as no subsequent page is loaded
+    * Fixed incorrect nesting of Form and Div tags preventing radio boxes from
+    *    working properly
+    * More CSS jiggery pokery
+    * Added some help text on the Right hand side
+    *   changed help text to load via AJAX for seperation of content
+    * Changed to more extensive use of totFees function to trigger automatic
+    *    full re-calculations as changes are made
+    * Modified the checkFees function to keep track of Guild pay and update
+    * Modified the setFees function to return Guild pay back to the checkFees
+    *    calling function.
+    * Added the reCalc option to the setOverRide function to avoid an infinite loop
+    
+
+Changes in v2.0 - 28/06/2011
+    * Released as v2.0
+
+Changes in v1.6b - 24/06/2011
+    * Changed development environment to NetBeans
+    * Added onChange to gender field to adjust ranks accordingly
+    * Changed Church ranks to display gender aware names but submit just rank
+    * Changed select control to use jQuery plugin instead of raw DOM
+    * Added automatic tabIndex re-ordering
+    * Selected the MIT license
+    * Added comments in the JsDoc format
+    * Changed core script name to something more meaningful
+    * Adopted some code conventions and generally tidied things up
+    * Replaced document.getElementById with jQuery selectors
+    * Refactored the HTML code to be neater and use more CSS
+    * Re-wrote the various addRow functions to use jQuery
+    * Changed money summary cells to read only text
+    * Added hidden fields to make sure money summary is sent to the PHP script
+    * Changed the set_Branch function to use jQuery selectors
+    * Added Google docs export functonality
+    * Show / Hide output options based on LO consent
+    * Added a clear cookies button to the form
+    * re-wrote Cookie related code to use jQuery
+    * Automated the prep for release process
+    * Added jQuery UI pretty for front page
+
+Changes in v1.5b - 21/06/11
+	* Added automatic addition of Knightly church memberships if not already selected
+        * Fixed roses tithe
+        * Linked Rose Dev rank to Church Rank
+        * Fixed the Knights extra ranks bug
+        * Added Character Gender field
+        * Added Rank names to Church ranks
+        * Made Church ranks gender aware
+
+Changes in v1.4b
+	* Changed directory layout
+	* Added 'remember me on this computer' functionality
+	* Changed behaviour of calculate math button to trigger a Tithe / Fee re-calcultation when pressed before calculating final results
+	* Added onChange behaviour to income field to re-calculate tithes when changed
+	* Removed seperate tithe calculator as funcationality now incorporated into the core form
+	* Fixed tithe calculations such that Lawmen tithe on their guild pay if they are religious
+
+Changes in v1.3b
+	* Added output type selector
+	* Added CSV Output
+	* Added Narrative output
+	* Fixed church advancement rates
+	* Fixed the output income calculation
+	* Fixed incorrect advance bug
+	
+Changes in v1.2b
+
+	* Added Tithes for Churches
+	* Added Guild pay for Guards and Foresters
+	* Added Guild fees for other guilds
+	* Added Tithes for all the Knightly orders
+	
+Changes in v1.1b
+
+	* Major re-factoring of code to pass JSLint scan
+	* Adoption of jQuery functions for cross-browser support

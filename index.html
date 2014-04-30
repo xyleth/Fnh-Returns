@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+    <HEAD>
+        <LINK REL=StyleSheet HREF="include/CSS/style.css" TYPE="text/css">
+        <link type="text/css" href="include/CSS/humanity/jquery-ui-1.8.14.custom.css" rel="stylesheet">	
+        <script type="text/javascript" src="include/JS/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="include/JS/jquery.domec-1.1.0.js"></script>
+        <script type="text/javascript" src="include/JS/jquery.selectboxes.js"></script>
+        <script type="text/javascript" src="include/JS/jquery.cookie.js"></script>
+        <script type="text/javascript" src="include/JS/jquery-ui-1.8.14.custom.min.js"></script>
+        <script type="text/javascript" src="include/JS/json2.js"></script>
+        <SCRIPT type="text/javascript" src="include/JS/FnHReturns.js"></SCRIPT>
+
+        <TITLE>Character Return Form</TITLE>
+    </HEAD>
+    <BODY>
+        <div id="header">
+            <h1>
+                Fools and Heroes Online Character Returns
+                <a href="changelog.txt" tabindex="700">v2.1.2</a>
+            </h1>
+        </div>
+        <div class="colmask threecol">
+            <div class="colmid">
+                <div class="colleft">
+                    <div class="col1">
+                        <form name="PCreturn" method="post" action="http://www.foolsandheroes.org/Returns/process.php">
+                            <div id="accordion">  
+                                <h3><a href="#" onClick="about('aboutYou');" tabindex="100">About You</a></h3>
+                                <div>
+                                    <table  id="aboutYou">
+                                        <tr>
+                                            <td class="tableLabelText">
+                                                Enter your real name
+                                            </td>
+                                            <td class="tableEntryText">
+                                                <input tabIndex="101" maxLength="50" size="44" name="Player_name" id="Player_name">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableLabelText">
+                                                Select your Branch
+                                            </td>
+                                            <td class="tableEntryText">
+                                                <SELECT name="recipient" ONCHANGE="set_branch()" id="branch" tabindex="102">
+                                                    <option value='Bath'>Bath</option>
+                                                    <option value='BlackCountry'>Black Country</option>
+                                                    <option value='Bolton'>Bolton</option>
+                                                    <option value='Bristol'>Bristol</option>
+                                                    <option value='Cardiff'>Cardiff</option>
+                                                    <option value='Derby'>Derby</option>
+                                                    <option value='Edinburgh'>Edinburgh</option>
+                                                    <option value='Guildford'>Guildford</option>
+                                                    <option value='Hull'>Hull</option>
+                                                    <option value='Independent'>Independent</option>
+                                                    <option value='Leeds'>Leeds</option>
+                                                    <option value='Leicester'>Leicester</option>
+                                                    <option value='Maidenhead'>Maidenhead</option>
+                                                    <option value='Newcastle'>Newcastle</option>
+                                                    <option value='Nottingham'>Nottingham</option>
+                                                    <option value='Norwich'>Norwich</option>
+                                                    <option value='Oxford'>Oxford</option>
+                                                    <option value='Portsmouth'>Portsmouth</option>
+                                                    <option value='Sheffield'>Sheffield</option>
+                                                    <option value='StHelens'>St Helens</option>
+                                                    <option value='TeesValley'>Tees Valley</option>
+                                                </SELECT>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableLabelText">
+                                                Enter your membership no
+                                            </td>
+                                            <td class="tableEntryText">
+                                                <input tabIndex="103" size="6" value="BA" name="Membership_number" id="Membership_number" >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableLabelText">
+                                                Enter your character name
+                                            </td>
+                                            <td class="tableEntryText">
+                                                <input tabIndex="104" maxLength="50" size="44" name="Character_name" id="Character_name">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableLabelText">
+                                                Enter your character Gender
+                                            </td>
+                                            <td class="tableEntryText">
+                                                <select style="MARGIN-LEFT: auto" size="1" name="gender" id="gender" onChange="changeGender()" tabindex="105">
+                                                    <option value="male" selected>Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableLabelText">
+                                                Enter your race
+                                            </td>
+                                            <td class="tableEntryText">
+                                                <select style="MARGIN-LEFT: auto" size="1" name="Character_Race" id="Character_Race" tabindex="106">
+                                                    <option value="Human" selected>Human</option>
+                                                    <option value="Half Elf">Half Elf</option>
+                                                    <option value="Elf">Elf</option>
+                                                    <option value="Dwarf">Dwarf</option>
+                                                    <option value="Halfling">Halfling</option>
+                                                    <option value="Special">Special</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tableLabelText">
+                                                Enter the month this return is FOR
+                                            </td>
+                                            <td class="tableEntryText">
+                                                <select style="MARGIN-LEFT: auto" size="1" name="Month" tabindex="107">
+                                                    <option value="January" selected>January</option>
+                                                    <option value="February">February</option>
+                                                    <option value="March">March</option>
+                                                    <option value="April">April</option>
+                                                    <option value="May">May</option>
+                                                    <option value="June">June</option>
+                                                    <option value="July">July</option>
+                                                    <option value="August">August</option>
+                                                    <option value="September">September</option>
+                                                    <option value="October">October</option>
+                                                    <option value="November">November</option>
+                                                    <option value="December">December</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <h3><a href="#" onClick="about('money');" tabindex="200">Money Matters</a></h3>
+                                <div>
+                                    <div id="moneyTabs">
+                                        <ul>
+                                            <li><a href="#income" tabindex="201" onClick="about('money');">1) Income and Expenses</a></li>
+                                            <li><a href="#fees" tabindex="230" onClick="about('fees');">2) Fees and Tithes</a></li>
+                                            <li><a href="#summary" tabindex="290" onClick="about('summary');">3) Summary</a></li>
+                                        </ul>
+                                        <div id="income">
+                                            <table  id="moneyMatters">
+                                                <tr>
+                                                    <th></th>
+                                                    <th class="subtle">Crowns</th>
+                                                    <th class="subtle">Pennies</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tableLabelText">
+                                                        Balance from last month
+                                                    </td>
+                                                    <td class="tableEntryText">
+                                                        <input tabindex="210" maxLength="6" size="6" value="0" name="Start_balance_crowns" id="startCrowns" onChange="totFees()">
+                                                    </td>
+                                                    <td class="tableEntryText">
+                                                        <input tabindex="211" maxLength="6" size="6" value="0" name="Start_balance_pennies" id="startPennies" onChange="totFees()">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tableLabelText">
+                                                        Total income from missions and trading this month
+                                                    </td>
+                                                    <td class="tableEntryText">
+                                                        <input tabindex="212" maxLength="6" size="6" value="0" name="Income_crowns" id="incomeCrowns" onChange="totFees()">
+                                                    </td>
+                                                    <td class="tableEntryText">
+                                                        <input tabindex="213" maxLength="6" size="6" value="0" name="Income_pennies" id="incomePennies" onChange="totFees()">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tableLabelText">
+                                                        Expenditures excluding tithes or Guild fees
+                                                    </td>
+                                                    <td class="tableEntryText">
+                                                        <input tabindex="214" size="6" value="0" name="Other_Expense_crowns" id="otherCrowns" onChange="totFees()">
+                                                    </td>
+                                                    <td class="tableEntryText">
+                                                        <input tabindex="215" size="6" value="0" name="Other_Expense_pennies" id="otherPennies" onChange="totFees()">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="fees">
+                                            <table  id="FeeTable">
+                                                <tr>
+                                                    <th class="subtle" style="width: 240px;">
+                                                        Name of Guild/Church
+                                                    </th>
+                                                    <th class="subtle" style="width: 250px;">                        
+                                                        Rank
+                                                    </th>
+                                                    <th class="subtle" style="width: 80px;">
+                                                        Crowns
+                                                    </th>
+                                                    <th class="subtle" style="width: 80px;">
+                                                        Pennies
+                                                    </th>
+                                                    <th class="subtle" style="width: 80px;">
+                                                        Advance?
+                                                    </th>
+                                                    <th class="subtle" style="width: 40px;">
+                                                        Over-ride
+                                                    </th>
+                                                    <th class="subtle" style="width: 40px;">
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                            <br>
+                                            <input type="button" value="Add another Guild or Church" onClick="addFeeRow('FeeTable');" tabindex="259">
+                                        </div>
+                                        <div id="summary">
+                                            <table  id="summaryTable">
+                                                <tr>
+                                                    <td class="tableLabelText">
+                                                        Guild Pay:
+                                                    </td>
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="guildIncomeCrowns">
+                                                            0
+                                                        </div>
+                                                    <td>
+                                                        /
+                                                    </td>
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="guildIncomePennies">
+                                                            0
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tableLabelText">                        
+                                                        Total Income:
+                                                    </td>
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="totalIncomeCrowns">
+                                                            0
+                                                        </div>
+                                                    <td>
+                                                        /
+                                                    </td>                                           
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="totalIncomePennies">
+                                                            0
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tableLabelText">
+                                                        Tithes and Fees:
+                                                    </td>
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="totalFeesCrowns">
+                                                            0
+                                                        </div>
+                                                    <td>
+                                                        /
+                                                    </td>
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="totalFeesPennies">
+                                                            0
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tableLabelText">
+                                                        Month end balance:
+                                                    </td>
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="balanceCrowns" class="balance">
+                                                            0
+                                                        </div>
+                                                    <td>
+                                                        /
+                                                    </td>
+                                                    <td class="tableReadOnlyText">
+                                                        <div id="balancePennies" class="balance">
+                                                            0
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p>
+                                                <input onClick="totFees()" type="button" value="Calculate the Maths'" name="calcman" tabindex="299">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <h3><a href="#" onClick="about('adventures');" tabindex="300">Adventures attended</a></h3>
+                                <div>                    
+                                    <h6>
+                                        If you did not adventure select DNA in this section
+                                    </h6>
+                                    <table  id="AdventureTable">
+                                        <tr>
+                                            <th class="subtle">
+                                                Branch
+                                            </th>
+                                            <th class="subtle">
+                                                Times attended
+                                            </th>
+                                            <th class="subtle">
+
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <input type="button" value="Add another Branch" onClick="addBranchRow('AdventureTable');" tabindex="399">
+                                    <br><br>
+                                </div>
+                                <h3><a href="#" onClick="about('equipment');" tabindex="400">Equipment</a></h3>
+                                <div>                  
+                                    <h6>
+                                        Please provide a full list of any magic items you hold
+                                    </h6>
+                                    <table  id="magicItemTable">
+                                        <tr>
+                                            <th class="subtle" style="width: 180px;">
+                                                Item Number
+                                            </th>
+                                            <th class="subtle">
+                                                Item Name
+                                            </th>
+                                            <th class="subtle">
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <input type="button" value="Add an Item" onClick="addMagicItemRow('magicItemTable');" tabindex="499">
+                                </div>
+                            </div>
+                            <br><br>
+                            <div id="submitControls">           
+                                <div id="exportOptions">
+                                    <SPAN id="narrative">
+                                        <input type="radio" name="formAction" value="narrative" id="narrRadio" tabindex="500">
+                                        <label for="narrRadio" class="expType">Narrative export</label>
+                                    </SPAN>
+                                    <SPAN id="csv">
+                                        <input type="radio" name="formAction" value="csv" id="csvRadio" tabindex="501">
+                                        <label for="csvRadio" class="expType">CSV Export</label>
+                                    </SPAN>
+                                    <SPAN id="gdoc">
+                                        <input type="radio" name="formAction" value="gdoc" id="gdocRadio" tabindex="503">
+                                        <label for="gdocRadio" class="expType">Google Docs export</label>
+                                    </SPAN>
+                                </div>
+                                <input type="checkbox" name="rememberMe" id="remember" tabindex="504">
+                                <label for="remember" class="expType">Remember me on this computer</label>
+                                <br><br>
+                                <input type="submit" value="Submit Return" id="submit" tabindex="505">
+                                <input type="reset" value="Clear the form" name="Clear the form" id="reset" tabindex="506">
+                                <input type="button" value="Clear Cookies" onclick="clearCookies()" id="clear" tabindex="507">
+                            </div>
+                            <div id="hiddenFormElements">
+                                <input type="hidden" name="Guild_income_crowns" id="hiddenGuildIncomeCrowns">
+                                <input type="hidden" name="Guild_income_pennies" id="hiddenGuildIncomePennies">
+                                <input type="hidden" name="Total_income_crowns" id="hiddenTotalIncomeCrowns">
+                                <input type="hidden" name="Total_income_pennies" id="hiddenTotalIncomePennies">
+                                <input type="hidden" name="Balance_crowns" id="hiddenBalanceCrowns">
+                                <input type="hidden" name="Balance_pennies" id="hiddenBalancePennies">
+                            </div>
+                        </form>
+                    </div> 
+                    <div class="col2">
+                        <P>
+                            Character Returns are done for every calendar month and have to sent 
+                            in by the <B>10th of the following month.</B>
+                            If you don't hand in a return for over 3 months your character 
+                            may be terminated!
+                        </P>
+                        <P>
+                            <B>Failure to hand in a return will result in no advancement. 
+                                To advance you need to adventure and fill in a return</B>
+                        </P>
+                    </div>
+                    <div class="col3"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+        </div>
+        <BR>
+    </BODY>
+</HTML>
